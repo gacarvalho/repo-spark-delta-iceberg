@@ -4,7 +4,6 @@ services:
 
   # Spark Master
   spark-master:
-    container_name: spark-master
     build:
       context: ./spark
       dockerfile: Dockerfile

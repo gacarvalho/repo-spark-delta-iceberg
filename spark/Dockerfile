@@ -10,6 +10,7 @@ COPY config/spark/jars /opt/bitnami/spark/jars
 COPY config/spark/log4j2.properties /opt/bitnami/spark/conf/
 
 COPY requirements.txt /opt/bitnami/spark/conf/requirements.txt
+
 RUN pip3 install -r /opt/bitnami/spark/conf/requirements.txt
 RUN mkdir -p /opt/bitnami/spark/logs/events
 

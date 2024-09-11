@@ -21,7 +21,9 @@ def init_spark_session(app_name):
         .config("spark.executor.memory", "3g")
         .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
         .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
-        .enableHiveSupport()
+        .config("spark.local.dir", "/tmp/spark-temp")
+
+    .enableHiveSupport()
     )
 
     spark = configure_spark_with_delta_pip(builder).getOrCreate()
